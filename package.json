@@ -1,0 +1,26 @@
+{
+  "name": "ui",
+  "version": "1.0.0",
+  "description": "UI for belenot website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/belenot/ui.git"
+  },
+  "keywords": [
+    "ui",
+    "belenot"
+  ],
+  "author": "kholhunov0@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/belenot/ui/issues"
+  },
+  "homepage": "https://github.com/belenot/ui#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

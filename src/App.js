@@ -4,6 +4,7 @@ import React, { Component, useState } from "react";
 import "./App.css";
 import Contacts from "./Contacts";
 import Resume from "./Resume";
+import Skills from "./Skills";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -65,8 +66,9 @@ function App() {
                         state.value == 0 &&
                         <Grid>
                             <Typography>
+                                <h2>Hello, there!</h2>
                                 <p>
-                                    Full stack develop.
+                                    I am full stack developer.
                                     Prefer Kotlin for backend and React for frontend.
                                     Among databases the most used by me is PostgreSQL and MongoDB.
                                 </p>
@@ -83,6 +85,9 @@ function App() {
                                 </p>
                             </Typography>
                         </Grid>
+                    }
+                    {state.value == 1 &&
+                        <Skills />
                     }
                     {state.value == 3 && 
                         <Resume />

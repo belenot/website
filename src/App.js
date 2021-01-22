@@ -3,6 +3,7 @@ import { Email, Phone } from "@material-ui/icons";
 import React, { Component, useState } from "react";
 import "./App.css";
 import Contacts from "./Contacts";
+import JobExperience from "./JobExperience";
 import Resume from "./Resume";
 import Skills from "./Skills";
 
@@ -49,7 +50,7 @@ function App() {
                     <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
                         <Tab label="Kholkhunov Sergey" />
                         <Tab label="Skills" />
-                        <Tab label="Job Expirience" />
+                        <Tab label="Job Experience" />
                         <Tab label="Resume" />
                         <Tab label="Contacts" />
                     </Tabs>
@@ -88,6 +89,9 @@ function App() {
                     }
                     {state.value == 1 &&
                         <Skills />
+                    }
+                    {state.value == 2 && 
+                        <JobExperience />
                     }
                     {state.value == 3 && 
                         <Resume />

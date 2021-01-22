@@ -63,6 +63,9 @@ function App() {
                     < Box >
                         <Avatar alt="Kholkhunov Sergey" src="/images/avatar.jpeg" className={classes.large} />
                     </Box>
+                    {state.value == 3 &&
+                    <Button href="/assets/resume.pdf">Download Resume</Button>
+                    }
                 </Grid>
                 <Grid item xs={6} justify='center'>
                     {

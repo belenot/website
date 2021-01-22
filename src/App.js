@@ -8,6 +8,10 @@ import Resume from "./Resume";
 import Skills from "./Skills";
 
 const useStyles = makeStyles((theme) => ({
+    appBar: {
+        background: "black"
+        
+    },
     root: {
         display: 'flex',
         '& > *': {
@@ -45,16 +49,14 @@ function App() {
     const value = state.value
     return (
         <Container maxWidth="lg">
-            <AppBar position="static">
-                <AppBar position="static">
-                    <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-                        <Tab label="Kholkhunov Sergey" />
-                        <Tab label="Skills" />
-                        <Tab label="Job Experience" />
-                        <Tab label="Resume" />
-                        <Tab label="Contacts" />
-                    </Tabs>
-                </AppBar>
+            <AppBar position="static" className={classes.appBar}>
+                <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+                    <Tab label="Kholkhunov Sergey" />
+                    <Tab label="Skills" />
+                    <Tab label="Job Experience" />
+                    <Tab label="Resume" />
+                    <Tab label="Contacts" />
+                </Tabs>
             </AppBar>
             <Grid container className={classes.body} justify='space-around'>
                 <Grid item xs={3} >

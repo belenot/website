@@ -1,7 +1,43 @@
 %base-paragraph {
     color: rgb(19, 15, 15);
-}
+};
+
+$desktop: "1000px";
 
 p {
     @extend %base-paragraph
+};
+
+body {
+    @media (min-width: $desktop) {
+        margin: 0% 15%;
+    }
 }
+
+.top-bar {
+    display: flex;
+    background-color: black;
+    justify-content: space-around;
+    flex-direction: column;
+    @media (min-width: $desktop) {
+        flex-direction: row;
+    }
+    padding: 0% 20%;
+    .button {
+        border:  white solid;
+        border-width: 0px 1px;
+        height: 50px;
+        width: 100%;
+        font-weight: bold;
+        &:hover {
+            background-color: darkred;
+            cursor: pointer;
+        }
+        p {
+            color: white;
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+    };
+};

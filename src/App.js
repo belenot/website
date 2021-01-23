@@ -1,5 +1,3 @@
-import { AppBar, Toolbar, IconButton, Avatar, Button, Container, makeStyles, Typography, Tabs, Tab, Box, Link, List, ListItem, ListItemText, ListItemIcon, ListItemAvatar, Grid } from "@material-ui/core";
-import { Email, Phone } from "@material-ui/icons";
 import React, { Component, useState } from "react";
 import "./App.css";
 import Contacts from "./Contacts";
@@ -7,76 +5,31 @@ import JobExperience from "./JobExperience";
 import MainInfo from "./MainInfo";
 import Resume from "./Resume";
 import Skills from "./Skills";
-
-const useStyles = makeStyles((theme) => ({
-    appBar: {
-        background: "black"
-        
-    },
-    tabs: {
-        
-    },
-    root: {
-        display: 'flex',
-        '& > *': {
-            margin: theme.spacing(1),
-        },
-        flexGrow: 1
-    },
-    body: {
-        margin: "20px"
-    },
-    small: {
-        width: theme.spacing(3),
-        height: theme.spacing(3),
-    },
-    large: {
-        width: theme.spacing(40),
-        height: theme.spacing(40),
-    },
-    menuButton: {
-        marginRight: theme.spacing(2),
-    },
-    title: {
-        flexGrow: 1,
-    },
-}));
+import TopBar from "./TopBar";
 
 function App() {
 
-    const classes = useStyles();
-    const [state, setState] = useState({ value: 0 })
+    const page = 'Description'
 
-    function handleChange(event, value) {
-        setState({ value: value })
-    }
-    const value = state.value
     return (
-        <Container maxWidth="lg">
-            <AppBar position="static" className={classes.appBar}>
-                <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" className={classes.tabs}>
-                    <Tab className="check-class" label="Kholkhunov Sergey" />
-                    <Tab label="Skills" />
-                    <Tab label="Job Experience" />
-                    <Tab label="Resume" />
-                </Tabs>
-            </AppBar>
-            <Grid container className={classes.body} justify='space-around'>
-                <Grid item xs={3} container direction='column' alignItems='center'>
-                    <Grid item>
-                        <MainInfo classes={classes} />
-                    </Grid>
-                    <Grid item>
-                        {state.value == 3 &&
-                            <Button href="/assets/resume.pdf">Download Resume</Button>
+        <div>
+            <TopBar>
+            </TopBar>
+            <div>
+                <div>
+                    <div>
+                        <MainInfo classes={null} />
+                    </div>
+                    <div>
+                        {page == 'Resume' &&
+                            <button href="/assets/resume.pdf">Download Resume</button>
                         }
-                    </Grid>
-                </Grid>
-                <Grid item xs={6} justify='center'>
+                    </div>
+                </div>
+                <div>
                     {
-                        state.value == 0 &&
-                        <Grid>
-                            <Typography>
+                        page == 'Description' &&
+                        <div>
                                 <h2>Hello, there!</h2>
                                 <p>
                                     I am backend developer.
@@ -94,25 +47,23 @@ function App() {
                                     
                                     Currently I am building my own website. 
                                 </p>
-                            </Typography>
-                        </Grid>
+                        </div>
                     }
-                    {state.value == 1 &&
+                    {page == 'Skills' &&
                         <Skills />
                     }
-                    {state.value == 2 && 
+                    {page == 'JobExperience' && 
                         <JobExperience />
                     }
-                    {state.value == 3 && 
+                    {page == 'Resume' && 
                         <Resume />
                     }
-                    {
-                        state.value == 4 &&
+                    {page == 'Contacts' &&
                         <Contacts />
                     }
-                </Grid>
-            </Grid>
-        </Container >
+                </div>
+            </div>
+        </div >
     );
 }
 

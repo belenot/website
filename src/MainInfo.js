@@ -4,10 +4,10 @@ import Contacts from "./Contacts"
 
 function MainInfo({ classes }) {
     return (
-        <Box>
-            <Avatar alt="Kholkhunov Sergey" src="/images/avatar.jpeg" className={classes.large} />
+        <div>
+            <img alt="Kholkhunov Sergey" src="/images/avatar.jpeg" />
             <Contacts />
-        </Box>
+        </div>
     )
 }
 

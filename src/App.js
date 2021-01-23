@@ -5,11 +5,28 @@ import TopBar from "./TopBar";
 
 function App() {
 
-    const [page, setPage] = useState('Description')
+    const [state, setState] = useState({ page: 'Description', isExtended: false })
+
+    function setPage(page) {
+        setState({ ...state, page: page, isExtended: false })
+    }
+    function setExtended(extended) {
+        setState({ ...state, isExtended: extended })
+    }
+    function handleTopBarButton(button) {
+        if (button != 'ExtendedMenu') {
+            setPage(button)
+        } else {
+            setExtended(!state.isExtended)
+        }
+    }
+
+    const page = state.page
+    const isExtended = state.isExtended
 
     return (
         <div>
-            <TopBar changePage={setPage} />
+            <TopBar handleTopBarButton={handleTopBarButton} isExtended={isExtended} />
             <Content page={page} />
         </div>
 

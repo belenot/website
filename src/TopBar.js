@@ -1,13 +1,17 @@
 import React from 'react'
 
-function TopBar({ changePage }) {
-
+function TopBar({ handleTopBarButton, isExtended }) {
     return (
         <div className="top-bar">
-            <div className="button" onClick={() => changePage('Description')}><p>Description</p></div>
-            <div className="button" onClick={() => changePage('Skills')}><p>Skills</p></div>
-            <div className="button" onClick={() => changePage('JobExperience')}><p>Job Experience</p></div>
-            <div className="button" onClick={() => changePage('Resume')}><p>Resume</p></div>
+            <div className="button menu-button" onClick={() => handleTopBarButton('ExtendedMenu')}>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div className={`button ${isExtended ? "" : "hidden-button"}`} onClick={() => handleTopBarButton('Description')}><p>Description</p></div>
+            <div className={`button ${isExtended ? "" : "hidden-button"}`} onClick={() => handleTopBarButton('Skills')}><p>Skills</p></div>
+            <div className={`button ${isExtended ? "" : "hidden-button"}`} onClick={() => handleTopBarButton('JobExperience')}><p>Job Experience</p></div>
+            <div className={`button ${isExtended ? "" : "hidden-button"}`} onClick={() => handleTopBarButton('Resume')}><p>Resume</p></div>
         </div>
     )
 }

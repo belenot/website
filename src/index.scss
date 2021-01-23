@@ -24,6 +24,7 @@ body {
         flex-direction: row;
     };
     padding: 0% 20%;
+
     .button {
         border:  white solid;
         border-width: 0px 1px;
@@ -39,7 +40,28 @@ body {
             text-align: center;
             vertical-align: middle;
         };
-        
+        img {
+            width: 1rem;
+        };
+    };
+    .hidden-button {
+        @media (min-width: $desktop) {
+            display: initial;
+        }
+        display: none;
+    };
+    .menu-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        div {
+            height: 10%;
+            background-color: white;
+            margin: 0 40%;
+        };
+        @media (min-width: $desktop) {
+            display: none;
+        };
     };
 };
 
@@ -68,7 +90,6 @@ body {
         @media (min-width: $avatarWidth) {
             width: $avatarWidth;
         }
-        
     }
 }
 

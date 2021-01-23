@@ -1,0 +1,7 @@
+%base-paragraph {
+    color: rgb(19, 15, 15);
+}
+
+p {
+    @extend %base-paragraph
+}

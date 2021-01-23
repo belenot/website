@@ -4,7 +4,7 @@ import React, { Component, useState } from "react";
 
 function Contacts() {
     return (
-        <div>
+        <div className='contacts'>
             <ul>
                 <li>
                     <a href="https://github.com/belenot">Belenot Github Profile</a>
@@ -13,10 +13,10 @@ function Contacts() {
                     <a href="https://vk.com/id147448693">Холхунов Сергей</a>
                 </li>
                 <li>
-                    <a href="8-(966)-041-18-27">8-(966)-041-18-27</a>
+                    <a>8-(966)-041-18-27</a>
                 </li>
                 <li>
-                    <a href="kholhunov0@gmail.com">kholhunov0@gmail.com</a>
+                    <a>kholhunov0@gmail.com</a>
                 </li>
             </ul>
         </div>

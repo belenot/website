@@ -2,7 +2,8 @@
     color: rgb(19, 15, 15);
 };
 
-$desktop: "1000px";
+$desktop: 1000px;
+$avatarWidth: 420px;
 
 p {
     @extend %base-paragraph
@@ -12,7 +13,7 @@ body {
     @media (min-width: $desktop) {
         margin: 0% 15%;
     }
-}
+};
 
 .top-bar {
     display: flex;
@@ -21,7 +22,7 @@ body {
     flex-direction: column;
     @media (min-width: $desktop) {
         flex-direction: row;
-    }
+    };
     padding: 0% 20%;
     .button {
         border:  white solid;
@@ -32,12 +33,62 @@ body {
         &:hover {
             background-color: darkred;
             cursor: pointer;
-        }
+        };
         p {
             color: white;
             text-align: center;
             vertical-align: middle;
-        }
+        };
         
     };
 };
+
+.content {
+    margin-top: 5%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    @media (min-width: $desktop) {
+        flex-direction: row;
+    }
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width: $desktop) {
+        align-items: flex-start;
+    }
+    .avatar {
+        border-radius: 100%;
+        overflow: hidden;
+        width: 100%;
+        @media (min-width: $avatarWidth) {
+            width: $avatarWidth;
+        }
+        
+    }
+}
+
+.contacts {
+    width: 100%;
+    ul {
+        list-style: none;
+    }
+    li {
+        padding: 5px 0;
+    }
+    li:nth-child(odd) {
+        background-color: rgb(245, 245, 245);
+    }
+    a:visited {
+        color: darkred;
+    }
+
+}
+
+.description {
+    padding: 0 10%;
+}

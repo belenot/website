@@ -50,8 +50,8 @@ function App() {
     return (
         <Container maxWidth="lg">
             <AppBar position="static" className={classes.appBar}>
-                <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-                    <Tab label="Kholkhunov Sergey" />
+                <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" centered>
+                    <Tab className="check-class" label="Kholkhunov Sergey" />
                     <Tab label="Skills" />
                     <Tab label="Job Experience" />
                     <Tab label="Resume" />

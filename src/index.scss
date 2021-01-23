@@ -76,14 +76,20 @@ body {
     width: 100%;
     ul {
         list-style: none;
-        padding: 0 20%;
+        padding: 0 10%;
     }
     li {
         padding: 1rem 1rem;
         border-bottom: 1px solid silver;
+        display: flex;
+        align-items: center;
     }
     a {
         text-decoration: none;
+        margin-left: 1rem;
+    }
+    img {
+        width: 1.5rem;
     }
 
 }

@@ -7,15 +7,19 @@ function Contacts() {
         <div className='contacts'>
             <ul>
                 <li>
-                    <a href="https://github.com/belenot">Belenot Github Profile</a>
+                    <img src="/images/github-logo.png" />
+                    <a href="https://github.com/belenot">Belenot</a>
                 </li>
                 <li>
+                    <img src="/images/vk-logo.png" />
                     <a href="https://vk.com/id147448693">Холхунов Сергей</a>
                 </li>
                 <li>
+                    <img src="/images/phone-icon.png" />
                     <a>8-(966)-041-18-27</a>
                 </li>
                 <li>
+                    <img src="/images/email-icon.png" />
                     <a>kholhunov0@gmail.com</a>
                 </li>
             </ul>

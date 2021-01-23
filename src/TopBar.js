@@ -1,12 +1,13 @@
 import React from 'react'
 
-function TopBar() {
+function TopBar({ changePage }) {
+
     return (
         <div className="top-bar">
-            <div className="button"><p>Kholkhunov Sergey</p></div>
-            <div className="button"><p>Skills</p></div>
-            <div className="button"><p>Job Experience</p></div>
-            <div className="button"><p>Resume</p></div>
+            <div className="button" onClick={() => changePage('Description')}><p>Description</p></div>
+            <div className="button" onClick={() => changePage('Skills')}><p>Skills</p></div>
+            <div className="button" onClick={() => changePage('JobExperience')}><p>Job Experience</p></div>
+            <div className="button" onClick={() => changePage('Resume')}><p>Resume</p></div>
         </div>
     )
 }

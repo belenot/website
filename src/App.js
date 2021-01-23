@@ -5,10 +5,12 @@ import TopBar from "./TopBar";
 
 function App() {
 
+    const [page, setPage] = useState('Description')
+
     return (
         <div>
-            <TopBar />
-            <Content />
+            <TopBar changePage={setPage} />
+            <Content page={page} />
         </div>
 
     );

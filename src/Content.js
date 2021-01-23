@@ -5,9 +5,7 @@ import Resume from "./Resume";
 import Skills from "./Skills";
 import Contacts from "./Contacts";
 
-function Content() {
-    
-    const page = 'Description'
+function Content({page}) {
 
     return (
         <div className="content">

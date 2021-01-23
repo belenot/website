@@ -79,8 +79,8 @@ function App() {
                             <Typography>
                                 <h2>Hello, there!</h2>
                                 <p>
-                                    I am full stack developer.
-                                    Prefer Kotlin for backend and React for frontend.
+                                    I am backend developer.
+                                    Prefer Kotlin/JVM for backend and React for frontend.
                                     Among databases the most used by me is PostgreSQL and MongoDB.
                                 </p>
                                 <p>

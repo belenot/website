@@ -4,12 +4,16 @@ import React, { Component, useState } from "react";
 import "./App.css";
 import Contacts from "./Contacts";
 import JobExperience from "./JobExperience";
+import MainInfo from "./MainInfo";
 import Resume from "./Resume";
 import Skills from "./Skills";
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
         background: "black"
+        
+    },
+    tabs: {
         
     },
     root: {
@@ -50,22 +54,23 @@ function App() {
     return (
         <Container maxWidth="lg">
             <AppBar position="static" className={classes.appBar}>
-                <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" centered>
+                <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" className={classes.tabs}>
                     <Tab className="check-class" label="Kholkhunov Sergey" />
                     <Tab label="Skills" />
                     <Tab label="Job Experience" />
                     <Tab label="Resume" />
-                    <Tab label="Contacts" />
                 </Tabs>
             </AppBar>
             <Grid container className={classes.body} justify='space-around'>
-                <Grid item xs={3} >
-                    < Box >
-                        <Avatar alt="Kholkhunov Sergey" src="/images/avatar.jpeg" className={classes.large} />
-                    </Box>
-                    {state.value == 3 &&
-                    <Button href="/assets/resume.pdf">Download Resume</Button>
-                    }
+                <Grid item xs={3} container direction='column' alignItems='center'>
+                    <Grid item>
+                        <MainInfo classes={classes} />
+                    </Grid>
+                    <Grid item>
+                        {state.value == 3 &&
+                            <Button href="/assets/resume.pdf">Download Resume</Button>
+                        }
+                    </Grid>
                 </Grid>
                 <Grid item xs={6} justify='center'>
                     {

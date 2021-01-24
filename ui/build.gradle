@@ -1,0 +1,50 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath "com.moowork.gradle:gradle-node-plugin:1.2.0"
+    }
+}
+
+apply plugin: 'base'
+apply plugin: 'com.moowork.node'
+
+group 'com.belenot.website.ui'
+
+node {
+
+}
+
+'npm_run-script_build' {
+
+}
+
+task buildUi(type: NpmTask, dependsOn: 'npmInstall') {
+    npmCommand = ['run-script', 'build']
+
+    inputs.files fileTree("public").exclude { "public/dist/**" }
+    inputs.files fileTree("src")
+    // Do not included node_modules in dependencies, because hold on package.json
+    inputs.file "package.json"
+    inputs.file "package-lock.json"
+
+    outputs.dir 'dist'
+
+    doLast {
+        copy {
+            from 'dist'
+            into 'public/dist'
+        }
+    }
+}
+
+task cleanUi {
+    doFirst {
+        delete files("public/dist", "dist")
+    }
+}

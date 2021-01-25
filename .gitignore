@@ -3,3 +3,5 @@ bundle*.js
 build
 .idea
 .gradle
+src/main/resources/static
+src/test/resources/static

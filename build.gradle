@@ -38,18 +38,15 @@ jar {
     }
 }
 
-shadowJar {
+processResources.dependsOn('copyUi')
+
+task copyUi {
     dependsOn 'ui:buildUi'
 
     doFirst {
         copy {
             from "ui/public/"
             into "src/main/resources/static"
-        }
-
-        copy {
-            from "ui/public/dist/"
-            into   "src/main/resources/static/dist/"
         }
     }
 }

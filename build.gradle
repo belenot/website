@@ -1,9 +1,11 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.3.72'
     id 'com.github.johnrengelman.shadow' version '6.1.0'
+    id 'maven-publish'
 }
 
 group 'com.belenot.website'
+version '0.1-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -47,6 +49,28 @@ task copyUi {
         copy {
             from "ui/public/"
             into "src/main/resources/static"
+        }
+    }
+}
+
+shadowJar {
+    classifier ''
+}
+
+publishing {
+    publications {
+        shadow(MavenPublication) {
+            project.shadow.component(it)
+        }
+    }
+    repositories {
+        maven {
+            name 'nexus'
+            url snapshotsRepo // from ~/.gradle/gradle.properties
+            credentials {
+                username = repoUser // from ~/.gradle/gradle.properties
+                password = repoPass // from ~/.gradle/gradle.properties
+            }
         }
     }
 }

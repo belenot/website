@@ -26,7 +26,7 @@ function App() {
 
     return (
         <div>
-            <TopBar handleTopBarButton={handleTopBarButton} isExtended={isExtended} />
+            <TopBar handleTopBarButton={handleTopBarButton} isExtended={isExtended} page={page} />
             <Content page={page} />
         </div>
 

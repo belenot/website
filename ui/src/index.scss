@@ -2,6 +2,9 @@
     color: rgb(19, 15, 15);
 };
 
+$color1: darkred;
+
+
 $desktop: 1000px;
 $avatarWidth: 320px;
 
@@ -32,7 +35,7 @@ body {
         width: 100%;
         font-weight: bold;
         &:hover {
-            background-color: darkred;
+            background-color: $color1;
             cursor: pointer;
         };
         p {
@@ -50,6 +53,9 @@ body {
         }
         display: none;
     };
+    .active-button {
+        background-color: $color1;
+    }
     .menu-button {
         display: flex;
         flex-direction: column;

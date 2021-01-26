@@ -1,4 +1,4 @@
-import { Avatar, Card, CardHeader, Grid, makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import React, { Component, useState } from "react";
 
 const useStyles = makeStyles({
@@ -10,10 +10,13 @@ const useStyles = makeStyles({
 function Skills() {
     const classes = useStyles()
     return (
-        <Grid container justify='space-around'>
-            <Grid item xs={6} className={classes.cardItem}>
-                <Card>
-                    <CardHeader title="Backend" avatar={<Avatar src="/images/kotlin-logo.png" />} />
+        <div className="skills" >
+            <div className="skill-item">
+                <div className="skill-item-header">
+                    <img className="avatar" src="/images/backend-icon.png" />
+                    <h3>Backend</h3>
+                </div>
+                <div className="skill-item-list">
                     <ul>
                         <li>Java</li>
                         <li>Kotlin/JVM</li>
@@ -22,40 +25,52 @@ function Skills() {
                         <li>NodeJS</li>
                         <li>Express.js</li>
                     </ul>
-                </Card>
-            </Grid>
-            <Grid item xs={6} className={classes.cardItem}>
-                <Card>
-                    <CardHeader title="Testing" avatar={<Avatar src="/images/cucumber-logo.svg" />} />
+                </div>
+            </div>
+            <div className="skill-item">
+                <div className="skill-item-header">
+                    <img className="avatar" src="/images/bdd-icon.png" />
+                    <h3>Testing</h3>
+                </div>
+                <div className="skill-item-list">
                     <ul>
                         <li>JUnit</li>
                         <li>Cucumber JVM</li>
                         <li>BDD</li>
                     </ul>
-                </Card>
-            </Grid>
-            <Grid item xs={6} className={classes.cardItem}>
-                <Card>
-                    <CardHeader title="Frontend" avatar={<Avatar src="/images/js-logo.png" />} />
+                </div>
+            </div>
+            <div className="skill-item">
+                <div className="skill-item-header">
+                    <img className="avatar" src="/images/frontend-icon.png" />
+                    <h3>Frontend</h3>
+                </div>
+                <div className="skill-item-list">
                     <ul>
                         <li>Javascript</li>
                         <li>Typescript</li>
                         <li>React</li>
                     </ul>
-                </Card>
-            </Grid>
-            <Grid item xs={6} className={classes.cardItem}>
-                <Card>
-                    <CardHeader title="Database" avatar={<Avatar src="/images/postgresql-logo.png" />} />
+                </div>
+            </div>
+            <div className="skill-item">
+                <div className="skill-item-header">
+                    <img className="avatar" src="/images/database-icon.png" />
+                    <h3>Database</h3>
+                </div>
+                <div className="skill-item-list">
                     <ul>
                         <li>PostgreSQL</li>
                         <li>MongoDB</li>
                     </ul>
-                </Card>
-            </Grid>
-            <Grid item xs={6} className={classes.cardItem}>
-                <Card>
-                    <CardHeader title="DevOps" avatar={<Avatar src="/images/ansible-logo.png" />} />
+                </div>
+            </div>
+            <div className="skill-item">
+                <div className="skill-item-header">
+                    <img className="avatar" src="/images/devops-icon.png" />
+                    <h3>DevOps</h3>
+                </div>
+                <div className="skill-item-list">
                     <ul>
                         <li>Gradle</li>
                         <li>NPM</li>
@@ -65,9 +80,9 @@ function Skills() {
                         <li>AWS EC2</li>
                         <li>Vagrant</li>
                     </ul>
-                </Card>
-            </Grid>
-        </Grid>
+                </div>
+            </div>
+        </div >
     )
 }
 

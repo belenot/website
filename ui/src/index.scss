@@ -2,8 +2,8 @@
     color: rgb(19, 15, 15);
 };
 
-$color1: darkred;
-
+$color1: white;
+$color2: black;
 
 $desktop: 1000px;
 $avatarWidth: 320px;
@@ -23,6 +23,13 @@ body {
     background-color: black;
     justify-content: space-around;
     flex-direction: column;
+    background: black;
+    opacity: 80%;
+    border-radius: 0 0 5px 5px;
+    backdrop-filter: blur(10px);
+    position: sticky;
+    box-shadow: 0 0 5px black;
+    top: 0px;
     @media (min-width: $desktop) {
         flex-direction: row;
     };
@@ -34,12 +41,14 @@ body {
         height: 50px;
         width: 100%;
         font-weight: bold;
+        color: $color1;
         &:hover {
             background-color: $color1;
             cursor: pointer;
+            color: $color2;
         };
         p {
-            color: white;
+            color: inherit;
             text-align: center;
             vertical-align: middle;
         };
@@ -55,6 +64,7 @@ body {
     };
     .active-button {
         background-color: $color1;
+        color: $color2;
     }
     .menu-button {
         display: flex;
@@ -143,6 +153,7 @@ body {
 
 
     .skill-item {
+        background-color: white;
         padding: 5%;
         margin: 5% 0;
         box-shadow: 

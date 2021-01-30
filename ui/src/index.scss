@@ -194,5 +194,13 @@ body {
         }
 
     }
-    
+}
+
+.job-experience {
+    @extend .skills;
+    .job-experience-item {
+        @extend .skill-item ;
+        flex-direction: column;
+    }
+
 }

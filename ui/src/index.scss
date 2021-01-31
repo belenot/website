@@ -207,3 +207,26 @@ body {
     }
 
 }
+
+.resume {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @media (min-width: $desktop) {
+        flex-direction: row;
+
+    }
+    .button {
+        flex: 1;
+        border-radius: 10px;
+        box-shadow: 0 0 3px black;
+        // border: 2px solid red;
+        p {
+            text-align: center;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

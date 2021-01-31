@@ -18,16 +18,27 @@ function Resume() {
     }
 
     return (
-        <div className={classes.root}>
-            <Document
-                file="assets/resume.pdf"
-                onLoadSuccess={onDocumentLoadSuccess}
-            >
-                <Page pageNumber={1} />
-            </Document>
-            {/* <p>Page {pageNumber} of {numPages}</p> */}
+        <div className="resume">
+            <div className="resume-download button">
+                <p>Download PDF</p>
+            </div>
+            <div className="resume-download button">
+                <p>Preview</p>
+            </div>
         </div>
     )
 }
 
 export default Resume
+
+  // return (
+    //     <div className={classes.root}>
+    //         <Document
+    //             file="assets/resume.pdf"
+    //             onLoadSuccess={onDocumentLoadSuccess}
+    //         >
+    //             <Page pageNumber={1} />
+    //         </Document>
+    //         {/* <p>Page {pageNumber} of {numPages}</p> */}
+    //     </div>
+    // )

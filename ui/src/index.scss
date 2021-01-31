@@ -26,6 +26,7 @@ body {
 @import "./scrollbar";
 
 .top-bar {
+    z-index: 100;
     display: flex;
     background-color: black;
     justify-content: space-around;
@@ -221,11 +222,30 @@ body {
 .resume {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    @media (min-width: $desktop) {
-        flex-direction: row;
-
+    gap: 20px;
+    align-items: center;
+    
+    .resume-buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        @media (min-width: $desktop) {
+            flex-direction: row;
+    
+        }
     }
+
+    .resume-preview {
+        max-width: 100%;
+        max-height: 100%;
+        overflow: scroll;
+    }
+
+    .resume-preview::-webkit-scrollbar {
+        display: none;
+    }
+
     .button {
         flex: 1;
         border-radius: 10px;

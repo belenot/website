@@ -9,8 +9,7 @@ const useClasses = makeStyles({
 })
 
 function Resume() {
-    const [numPages, setNumPages] = useState(null);
-    const [pageNumber, setPageNumber] = useState(1);
+    const [isPreview, setPreview] =  useState(false);
 
     const classes = useClasses()
     function onDocumentLoadSuccess({ numPages }) {
@@ -19,26 +18,27 @@ function Resume() {
 
     return (
         <div className="resume">
-            <div className="resume-download button">
-                <p>Download PDF</p>
+            <div className="resume-buttons">
+                <div className="resume-download button" onClick={()=>window.location='/assets/resume.pdf'}>
+                    <p>Download PDF</p>
+                </div>
+                <div className="resume-download button" onClick={()=> setPreview(!isPreview)}>
+                    <p>{isPreview ? "Hide Preview" : "Preview"}</p>
+                </div>
             </div>
-            <div className="resume-download button">
-                <p>Preview</p>
+            {isPreview && 
+            <div className="resume-preview">
+                <Document
+                    file="assets/resume.pdf"
+                    // onLoadSuccess={onDocumentLoadSuccess}
+                >
+                    <Page pageNumber={1} />
+                </Document>
+                {/* <p>Page {pageNumber} of {numPages}</p> */}
             </div>
+            }
         </div>
     )
 }
 
 export default Resume
-
-  // return (
-    //     <div className={classes.root}>
-    //         <Document
-    //             file="assets/resume.pdf"
-    //             onLoadSuccess={onDocumentLoadSuccess}
-    //         >
-    //             <Page pageNumber={1} />
-    //         </Document>
-    //         {/* <p>Page {pageNumber} of {numPages}</p> */}
-    //     </div>
-    // )

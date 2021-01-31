@@ -8,6 +8,10 @@ $color2: black;
 $desktop: 1000px;
 $avatarWidth: 320px;
 
+html {
+    overflow: scroll;
+}
+
 p {
     @extend %base-paragraph
 };
@@ -18,6 +22,8 @@ body {
         margin: 0% 15%;
     }
 };
+
+@import "./scrollbar";
 
 .top-bar {
     display: flex;

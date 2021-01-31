@@ -54,6 +54,10 @@ body {
             cursor: pointer;
             color: $color2;
         };
+        &.menu-button:hover {
+            background-color: $color2;
+            color: $color1;
+        }
         p {
             color: inherit;
             text-align: center;

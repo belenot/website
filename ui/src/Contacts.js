@@ -22,6 +22,10 @@ function Contacts() {
                     <img src="/images/email-icon.png" />
                     <a>kholhunov0@gmail.com</a>
                 </li>
+                <li>
+                    <img src="/images/upwork-icon.webp" />
+                    <a href="https://www.upwork.com/freelancers/~013fde27aa64a065af">Upwork profile</a>
+                </li>
             </ul>
         </div>
     )

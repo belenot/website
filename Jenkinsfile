@@ -5,7 +5,7 @@ pipeline {
         stage('Fetch from git.') {
             steps {
                 dir("website") {
-                    git url: "git@github.com:belenot/website.git", branch: "master"
+                    git url: "git@github.com:belenot/website.git", branch: "main"
                 }
             }
         }

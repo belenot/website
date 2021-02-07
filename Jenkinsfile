@@ -13,7 +13,7 @@ pipeline {
         stage('Gradle publish.') {
             steps {
                 dir("website") {
-                    sh "./gradlew publish"
+                    sh "./gradlew --no-daemon publish  -PsnapshotsRepo=http://nexus.alpha.belenot.com:8081/repository/maven-snapshots/ -PrepoUser=admin -PrepoPass=nexus_password"
                 }
             }
         }
@@ -29,7 +29,8 @@ pipeline {
         stage('Ansible for website.') {
             steps {
                 dir('infrastructure') {
-                    sh "ansible-playbook playbook -t website -i aws-inventory.py"
+                    sh "ansible-galaxy install -r requirements.yml"
+                    sh "ansible-playbook playbook.yml -t website -i aws-inventory.py"
                 }
             }
         }

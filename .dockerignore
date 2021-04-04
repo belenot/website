@@ -1,0 +1,4 @@
+/kubernetes
+/ui
+!/ui/public
+!/ui/nginx.conf
